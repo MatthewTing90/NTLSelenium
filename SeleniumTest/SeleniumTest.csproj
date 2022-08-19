@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02D8B780-B2EF-4CB7-A9F8-4C97256FE7DC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeleniumTest</RootNamespace>
+    <AssemblyName>SeleniumTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronXL, Version=2022.6.0.7362, Culture=neutral, PublicKeyToken=0f5804b6690bad1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronXL.Excel.2022.7.7362\lib\net45\IronXL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.11.0\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.4.0.1\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.3.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\ExampleAutomation.cs" />
+    <Compile Include="Automation\Shopee\ShopeeChatAutomation.cs" />
+    <Compile Include="Automation\Shopee\ShopeeOrderAutomation.cs" />
+    <Compile Include="Automation\Shopee\ShopeeChatMsgAutomation.cs" />
+    <Compile Include="Automation\Shopee\ShopeeShipmentAutomation.cs" />
+    <Compile Include="DbStoredProcedure.cs" />
+    <Compile Include="mOdooCustomer.cs" />
+    <Compile Include="mOdooProduct.cs" />
+    <Compile Include="NtlSystemModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NtlSystemModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NtlSystemModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NtlSystemModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NtlSystemModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Automation\Shopee\ShopeeLoginAutomation.cs" />
+    <Compile Include="TimeHelper.cs" />
+    <Compile Include="Automation\WebAutomation.cs" />
+    <Compile Include="TNtlAttribute.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlAttributeValue.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlCarrier.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlCustomer.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlCustomerChat.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlDetail.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlInvoice.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlJobBatch.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlJobOrder.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlJobOrderItem.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlOrder.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlOrderItem.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlPaymentMethod.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlPermission.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlPlatform.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProduct.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProductAttributeValue.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProductCategory.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProductComponent.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProduction.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProductionItem.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlProductSubCategory.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlRole.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlRolePermission.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlSeleniumLog.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlShipment.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlStatu.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlStockItem.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlStockWarehouse.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlSummaryItem.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlSupplierShipment.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlUnit.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlUnitType.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlUom.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlUser.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlUserRole.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlWindow.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TNtlWindowUnit.cs">
+      <DependentUpon>NtlSystemModels.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="NtlSystemModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NtlSystemModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NtlSystemModels.edmx.diagram">
+      <DependentUpon>NtlSystemModels.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Shopee_Product_Listing.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NtlSystemModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NtlSystemModels.edmx</DependentUpon>
+      <LastGenOutput>NtlSystemModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NtlSystemModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NtlSystemModels.edmx</DependentUpon>
+      <LastGenOutput>NtlSystemModels.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.0.31.0.1\build\Selenium.WebDriver.GeckoDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.0.31.0.1\build\Selenium.WebDriver.GeckoDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.0.31.0.1\build\Selenium.WebDriver.GeckoDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.0.31.0.1\build\Selenium.WebDriver.GeckoDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.103.0.5060.5300\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.103.0.5060.5300\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.103.0.5060.5300\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.103.0.5060.5300\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

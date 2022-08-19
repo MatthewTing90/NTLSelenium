@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e3a5a97422b4f5a9dc42a0fb67f8917" Name="Diagram1">
+        <EntityTypeShape EntityType="NTLModel.TNtlAttribute" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlAttributeValue" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlCarrier" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlCustomer" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlDetail" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlInvoice" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlJobBatch" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlJobOrder" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlJobOrderItem" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlPaymentMethod" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlPermission" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlPlatform" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProduct" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProductAttributeValue" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProductCategory" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProductComponent" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProduction" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProductionItem" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlProductSubCategory" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlRole" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlRolePermission" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlShipment" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlStockItem" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlStockWarehouse" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlSupplierShipment" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlUom" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlUser" Width="1.5" PointX="10.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlUserRole" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NTLModel.TNtlStatu" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlCustomerChat" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlOrder" Width="1.5" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlOrderItem" Width="1.5" PointX="17.375" PointY="7.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlUnit" Width="1.5" PointX="9.375" PointY="17.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlUnitType" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlWindow" Width="1.5" PointX="17.375" PointY="16.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlWindowUnit" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlSummaryItem" Width="1.5" PointX="11.375" PointY="18.75" />
+        <EntityTypeShape EntityType="NTLModel.TNtlSeleniumLog" Width="1.5" PointX="17.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

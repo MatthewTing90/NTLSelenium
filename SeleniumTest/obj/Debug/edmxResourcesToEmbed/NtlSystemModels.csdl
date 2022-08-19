@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NTLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TNtlAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlAttributeValue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attribute_id" Type="Int32" />
+    <Property Name="value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TNtlCarrier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlCustomer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="platform_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="last_updated_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="last_updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TNtlInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="completed_date" Type="DateTime" Precision="3" />
+    <Property Name="shipping_fee" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="customer_address_line_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_address_line_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_zip_code" Type="Int32" />
+    <Property Name="customer_country" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="payment_method_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlJobBatch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="batch_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="completed_date" Type="DateTime" Precision="3" />
+    <Property Name="staff_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlJobOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="client_order_ref" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sub_total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="customer_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customer_street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="customer_street2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="customer_zip_code" Type="Int32" />
+    <Property Name="customer_city" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customer_state" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customer_country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="odoo_sales_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="batch_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+    <Property Name="odoo_status_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlJobOrderItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="quantity" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="length" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="sub_total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlPaymentMethod">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlPermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TNtlPlatform">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SKU2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="buy_price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="sell_price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="product_category_id" Type="Int32" />
+    <Property Name="product_sub_category_id" Type="Int32" />
+    <Property Name="uom_id" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProductAttributeValue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="attribute_value_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProductCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TNtlProductComponent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="master_product_id" Type="Int32" />
+    <Property Name="sub_product_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProduction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="staff_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="total_usage" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProductionItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="uom_id" Type="Int32" />
+    <Property Name="quantity" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="manufactured_date" Type="DateTime" Precision="3" />
+    <Property Name="expiry_date" Type="DateTime" Precision="3" />
+    <Property Name="production_id" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlProductSubCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="product_category_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TNtlRolePermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="permission_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlShipment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="start_address_line_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="start_address_line_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="start_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="start_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="start_zip_code" Type="Int32" />
+    <Property Name="start_country" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dest_address_line_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dest_address_line_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dest_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dest_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dest_zip_code" Type="Int32" />
+    <Property Name="dest_country" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tracking_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="expected_date" Type="DateTime" Precision="3" />
+    <Property Name="due_date" Type="DateTime" Precision="3" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="carrier_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlStockItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="uom_id" Type="Int32" />
+    <Property Name="stock_warehouse_id" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlStockWarehouse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address_line_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address_line_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zip_code" Type="Int32" />
+    <Property Name="country" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlSupplierShipment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="received_date" Type="DateTime" Precision="3" />
+    <Property Name="supplier_tracking_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NTL_tracking_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="supplier_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlUom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TNtlUserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="role_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dbNtlSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TNtlAttributes" EntityType="Self.TNtlAttribute" />
+    <EntitySet Name="TNtlAttributeValues" EntityType="Self.TNtlAttributeValue" />
+    <EntitySet Name="TNtlCarriers" EntityType="Self.TNtlCarrier" />
+    <EntitySet Name="TNtlCustomers" EntityType="Self.TNtlCustomer" />
+    <EntitySet Name="TNtlDetails" EntityType="Self.TNtlDetail" />
+    <EntitySet Name="TNtlInvoices" EntityType="Self.TNtlInvoice" />
+    <EntitySet Name="TNtlJobBatches" EntityType="Self.TNtlJobBatch" />
+    <EntitySet Name="TNtlJobOrders" EntityType="Self.TNtlJobOrder" />
+    <EntitySet Name="TNtlJobOrderItems" EntityType="Self.TNtlJobOrderItem" />
+    <EntitySet Name="TNtlPaymentMethods" EntityType="Self.TNtlPaymentMethod" />
+    <EntitySet Name="TNtlPermissions" EntityType="Self.TNtlPermission" />
+    <EntitySet Name="TNtlPlatforms" EntityType="Self.TNtlPlatform" />
+    <EntitySet Name="TNtlProducts" EntityType="Self.TNtlProduct" />
+    <EntitySet Name="TNtlProductAttributeValues" EntityType="Self.TNtlProductAttributeValue" />
+    <EntitySet Name="TNtlProductCategories" EntityType="Self.TNtlProductCategory" />
+    <EntitySet Name="TNtlProductComponents" EntityType="Self.TNtlProductComponent" />
+    <EntitySet Name="TNtlProductions" EntityType="Self.TNtlProduction" />
+    <EntitySet Name="TNtlProductionItems" EntityType="Self.TNtlProductionItem" />
+    <EntitySet Name="TNtlProductSubCategories" EntityType="Self.TNtlProductSubCategory" />
+    <EntitySet Name="TNtlRoles" EntityType="Self.TNtlRole" />
+    <EntitySet Name="TNtlRolePermissions" EntityType="Self.TNtlRolePermission" />
+    <EntitySet Name="TNtlShipments" EntityType="Self.TNtlShipment" />
+    <EntitySet Name="TNtlStockItems" EntityType="Self.TNtlStockItem" />
+    <EntitySet Name="TNtlStockWarehouses" EntityType="Self.TNtlStockWarehouse" />
+    <EntitySet Name="TNtlSupplierShipments" EntityType="Self.TNtlSupplierShipment" />
+    <EntitySet Name="TNtlUoms" EntityType="Self.TNtlUom" />
+    <EntitySet Name="TNtlUsers" EntityType="Self.TNtlUser" />
+    <EntitySet Name="TNtlUserRoles" EntityType="Self.TNtlUserRole" />
+    <FunctionImport Name="NSP_TNtlAttribute_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlAttribute_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlAttribute_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlAttributeValue_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlAttributeValue_Insert">
+      <Parameter Name="attribute_id" Mode="In" Type="Int32" />
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlAttributeValue_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="attribute_id" Mode="In" Type="Int32" />
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCarrier_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCarrier_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCarrier_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCustomer_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCustomer_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCustomer_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlDetail_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlDetail_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="last_updated_by" Mode="In" Type="String" />
+      <Parameter Name="last_updated_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlDetail_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="last_updated_by" Mode="In" Type="String" />
+      <Parameter Name="last_updated_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlInvoice_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlInvoice_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="details" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="shipping_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="customer_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="customer_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="customer_city" Mode="In" Type="String" />
+      <Parameter Name="customer_state" Mode="In" Type="String" />
+      <Parameter Name="customer_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="customer_country" Mode="In" Type="String" />
+      <Parameter Name="payment_method_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlInvoice_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="details" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="shipping_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="customer_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="customer_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="customer_city" Mode="In" Type="String" />
+      <Parameter Name="customer_state" Mode="In" Type="String" />
+      <Parameter Name="customer_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="customer_country" Mode="In" Type="String" />
+      <Parameter Name="payment_method_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobBatch_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobBatch_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="batch_no" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="staff_name" Mode="In" Type="String" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobBatch_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="batch_no" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="staff_name" Mode="In" Type="String" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrder_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrder_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="client_order_ref" Mode="In" Type="String" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_name" Mode="In" Type="String" />
+      <Parameter Name="customer_street" Mode="In" Type="String" />
+      <Parameter Name="customer_street2" Mode="In" Type="String" />
+      <Parameter Name="customer_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="customer_city" Mode="In" Type="String" />
+      <Parameter Name="customer_state" Mode="In" Type="String" />
+      <Parameter Name="customer_country" Mode="In" Type="String" />
+      <Parameter Name="odoo_sales_id" Mode="In" Type="Int32" />
+      <Parameter Name="odoo_status_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="batch_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrder_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="client_order_ref" Mode="In" Type="String" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_name" Mode="In" Type="String" />
+      <Parameter Name="customer_street" Mode="In" Type="String" />
+      <Parameter Name="customer_street2" Mode="In" Type="String" />
+      <Parameter Name="customer_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="customer_city" Mode="In" Type="String" />
+      <Parameter Name="customer_state" Mode="In" Type="String" />
+      <Parameter Name="customer_country" Mode="In" Type="String" />
+      <Parameter Name="odoo_sales_id" Mode="In" Type="Int32" />
+      <Parameter Name="odoo_status_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="batch_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrderItem_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrderItem_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="uom" Mode="In" Type="String" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlJobOrderItem_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="uom" Mode="In" Type="String" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPaymentMethod_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPaymentMethod_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPaymentMethod_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPermission_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPermission_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPermission_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPlatform_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPlatform_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="link" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlPlatform_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="link" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduct_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduct_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="SKU" Mode="In" Type="String" />
+      <Parameter Name="SKU2" Mode="In" Type="String" />
+      <Parameter Name="buy_price" Mode="In" Type="Decimal" />
+      <Parameter Name="sell_price" Mode="In" Type="Decimal" />
+      <Parameter Name="product_category_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_sub_category_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduct_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="SKU" Mode="In" Type="String" />
+      <Parameter Name="SKU2" Mode="In" Type="String" />
+      <Parameter Name="buy_price" Mode="In" Type="Decimal" />
+      <Parameter Name="sell_price" Mode="In" Type="Decimal" />
+      <Parameter Name="product_category_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_sub_category_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductAttributeValue_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductAttributeValue_Insert">
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="attribute_value_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductAttributeValue_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="attribute_value_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductCategory_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductCategory_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductCategory_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductComponent_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductComponent_Insert">
+      <Parameter Name="master_product_id" Mode="In" Type="Int32" />
+      <Parameter Name="sub_product_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductComponent_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="master_product_id" Mode="In" Type="Int32" />
+      <Parameter Name="sub_product_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduction_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduction_Insert">
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="staff_name" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProduction_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="staff_name" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductionItem_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductionItem_Insert">
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="manufactured_date" Mode="In" Type="DateTime" />
+      <Parameter Name="expiry_date" Mode="In" Type="DateTime" />
+      <Parameter Name="production_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductionItem_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="manufactured_date" Mode="In" Type="DateTime" />
+      <Parameter Name="expiry_date" Mode="In" Type="DateTime" />
+      <Parameter Name="production_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductSubCategory_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductSubCategory_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="product_category_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlProductSubCategory_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="product_category_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRole_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRole_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRole_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRolePermission_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRolePermission_Insert">
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+      <Parameter Name="permission_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlRolePermission_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+      <Parameter Name="permission_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlShipment_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlShipment_Insert">
+      <Parameter Name="start_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="start_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="start_city" Mode="In" Type="String" />
+      <Parameter Name="start_state" Mode="In" Type="String" />
+      <Parameter Name="start_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="start_country" Mode="In" Type="String" />
+      <Parameter Name="dest_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="dest_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="dest_city" Mode="In" Type="String" />
+      <Parameter Name="dest_state" Mode="In" Type="String" />
+      <Parameter Name="dest_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="dest_country" Mode="In" Type="String" />
+      <Parameter Name="tracking_no" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="expected_date" Mode="In" Type="DateTime" />
+      <Parameter Name="due_date" Mode="In" Type="DateTime" />
+      <Parameter Name="invoice_id" Mode="In" Type="Int32" />
+      <Parameter Name="carrier_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlShipment_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="start_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="start_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="start_city" Mode="In" Type="String" />
+      <Parameter Name="start_state" Mode="In" Type="String" />
+      <Parameter Name="start_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="start_country" Mode="In" Type="String" />
+      <Parameter Name="dest_address_line_1" Mode="In" Type="String" />
+      <Parameter Name="dest_address_line_2" Mode="In" Type="String" />
+      <Parameter Name="dest_city" Mode="In" Type="String" />
+      <Parameter Name="dest_state" Mode="In" Type="String" />
+      <Parameter Name="dest_zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="dest_country" Mode="In" Type="String" />
+      <Parameter Name="tracking_no" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="expected_date" Mode="In" Type="DateTime" />
+      <Parameter Name="due_date" Mode="In" Type="DateTime" />
+      <Parameter Name="invoice_id" Mode="In" Type="Int32" />
+      <Parameter Name="carrier_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockItem_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockItem_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="stock_warehouse_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockItem_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="stock_warehouse_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockWarehouse_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockWarehouse_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="address_line_1" Mode="In" Type="String" />
+      <Parameter Name="address_line_2" Mode="In" Type="String" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="String" />
+      <Parameter Name="zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="country" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSupplierShipment_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSupplierShipment_Insert">
+      <Parameter Name="received_date" Mode="In" Type="DateTime" />
+      <Parameter Name="supplier_tracking_id" Mode="In" Type="String" />
+      <Parameter Name="NTL_tracking_id" Mode="In" Type="String" />
+      <Parameter Name="supplier_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSupplierShipment_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="received_date" Mode="In" Type="DateTime" />
+      <Parameter Name="supplier_tracking_id" Mode="In" Type="String" />
+      <Parameter Name="NTL_tracking_id" Mode="In" Type="String" />
+      <Parameter Name="supplier_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUom_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUom_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUom_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUser_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUser_Insert">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUser_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUserRole_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUserRole_Insert">
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUserRole_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="role_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlStatus" EntityType="NTLModel.TNtlStatu" />
+    <FunctionImport Name="NSP_TNtlStatus_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStatus_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStatus_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlCustomerChats" EntityType="NTLModel.TNtlCustomerChat" />
+    <FunctionImport Name="NSP_TNtlCustomerChat_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCustomerChat_Insert">
+      <Parameter Name="message" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="msg_type" Mode="In" Type="String" />
+      <Parameter Name="sender_type" Mode="In" Type="String" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlCustomerChat_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="message" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="msg_type" Mode="In" Type="String" />
+      <Parameter Name="sender_type" Mode="In" Type="String" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlOrders" EntityType="NTLModel.TNtlOrder" />
+    <FunctionImport Name="NSP_TNtlOrder_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlOrder_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="voucher_no" Mode="In" Type="String" />
+      <Parameter Name="odoo_sales_id" Mode="In" Type="Int32" />
+      <Parameter Name="odoo_sales_no" Mode="In" Type="String" />
+      <Parameter Name="external_ref_no" Mode="In" Type="String" />
+      <Parameter Name="odoo_status_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="last_updated_by" Mode="In" Type="String" />
+      <Parameter Name="last_updated_date" Mode="In" Type="DateTime" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlOrder_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="voucher_no" Mode="In" Type="String" />
+      <Parameter Name="odoo_sales_id" Mode="In" Type="Int32" />
+      <Parameter Name="odoo_sales_no" Mode="In" Type="String" />
+      <Parameter Name="external_ref_no" Mode="In" Type="String" />
+      <Parameter Name="odoo_status_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="customer_id" Mode="In" Type="Int32" />
+      <Parameter Name="created_by" Mode="In" Type="String" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="last_updated_by" Mode="In" Type="String" />
+      <Parameter Name="last_updated_date" Mode="In" Type="DateTime" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlOrderItems" EntityType="NTLModel.TNtlOrderItem" />
+    <EntitySet Name="TNtlUnits" EntityType="NTLModel.TNtlUnit" />
+    <EntitySet Name="TNtlUnitTypes" EntityType="NTLModel.TNtlUnitType" />
+    <EntitySet Name="TNtlWindows" EntityType="NTLModel.TNtlWindow" />
+    <EntitySet Name="TNtlWindowUnits" EntityType="NTLModel.TNtlWindowUnit" />
+    <FunctionImport Name="NSP_TNtlOrderItem_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlOrderItem_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="voucher_no" Mode="In" Type="String" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlOrderItem_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="sub_total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="tax_price" Mode="In" Type="Decimal" />
+      <Parameter Name="discount_fee" Mode="In" Type="Decimal" />
+      <Parameter Name="total_price" Mode="In" Type="Decimal" />
+      <Parameter Name="voucher_no" Mode="In" Type="String" />
+      <Parameter Name="order_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="uom_id" Mode="In" Type="Int32" />
+      <Parameter Name="remark" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnit_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnit_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="unit_type_id" Mode="In" Type="Int32" />
+      <Parameter Name="master_unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnit_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="unit_type_id" Mode="In" Type="Int32" />
+      <Parameter Name="master_unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnitType_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnitType_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlUnitType_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindow_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindow_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindow_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindowUnit_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindowUnit_Insert">
+      <Parameter Name="window_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlWindowUnit_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="window_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_id" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="total_usage" Mode="In" Type="Decimal" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlSummaryItems" EntityType="NTLModel.TNtlSummaryItem" />
+    <FunctionImport Name="NSP_TNtlSummaryItem_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSummaryItem_Insert">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="used" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSummaryItem_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="sku" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="used" Mode="In" Type="Decimal" />
+      <Parameter Name="length" Mode="In" Type="Decimal" />
+      <Parameter Name="width" Mode="In" Type="Decimal" />
+      <Parameter Name="height" Mode="In" Type="Decimal" />
+      <Parameter Name="created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="completed_date" Mode="In" Type="DateTime" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlStockWarehouse_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email_address" Mode="In" Type="String" />
+      <Parameter Name="phone_number" Mode="In" Type="String" />
+      <Parameter Name="address_line_1" Mode="In" Type="String" />
+      <Parameter Name="address_line_2" Mode="In" Type="String" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="String" />
+      <Parameter Name="zip_code" Mode="In" Type="Int32" />
+      <Parameter Name="country" Mode="In" Type="String" />
+      <Parameter Name="detail_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TNtlSeleniumLogs" EntityType="NTLModel.TNtlSeleniumLog" />
+    <FunctionImport Name="NSP_TNtlSeleniumLog_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSeleniumLog_Insert">
+      <Parameter Name="log_name" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="Int32" />
+      <Parameter Name="start_date" Mode="In" Type="DateTime" />
+      <Parameter Name="end_date" Mode="In" Type="DateTime" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TNtlSeleniumLog_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="log_name" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="Int32" />
+      <Parameter Name="start_date" Mode="In" Type="DateTime" />
+      <Parameter Name="end_date" Mode="In" Type="DateTime" />
+      <Parameter Name="platform_id" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="TNtlStatu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlCustomerChat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="msg_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sender_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="platform_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sub_total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="voucher_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="odoo_sales_id" Type="Int32" />
+    <Property Name="odoo_sales_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="external_ref_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="odoo_status_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="created_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="last_updated_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="last_updated_date" Type="DateTime" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlOrderItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="quantity" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="sub_total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="voucher_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="total_usage" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="uom_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlUnit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="unit_type_id" Type="Int32" />
+    <Property Name="master_unit_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="total_usage" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlUnitType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlWindow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="length" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="total_usage" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlWindowUnit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="window_id" Type="Int32" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="total_usage" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlSummaryItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="used" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="length" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="width" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="height" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="completed_date" Type="DateTime" Precision="3" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="detail_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TNtlSeleniumLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="log_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="platform_id" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

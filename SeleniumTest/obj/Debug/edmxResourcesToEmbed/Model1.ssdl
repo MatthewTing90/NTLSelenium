@@ -1,0 +1,1097 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbNtlSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TNtlAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlAttributeValue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="attribute_id" Type="int" />
+    <Property Name="value" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TNtlCarrier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlCustomer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="email_address" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="platform_id" Type="int" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlCustomerChat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="message" Type="varchar(max)" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="msg_type" Type="varchar" MaxLength="50" />
+    <Property Name="sender_type" Type="varchar" MaxLength="50" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="read_status_id" Type="int" />
+    <Property Name="send_status_id" Type="int" />
+    <Property Name="platform_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="remark" Type="varchar(max)" />
+    <Property Name="created_by" Type="varchar" MaxLength="100" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="last_updated_by" Type="varchar" MaxLength="100" />
+    <Property Name="last_updated_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TNtlInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="code" Type="varchar" MaxLength="100" />
+    <Property Name="details" Type="varchar(max)" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="completed_date" Type="datetime" />
+    <Property Name="shipping_fee" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="customer_address_line_1" Type="varchar" MaxLength="50" />
+    <Property Name="customer_address_line_2" Type="varchar" MaxLength="50" />
+    <Property Name="customer_city" Type="varchar" MaxLength="50" />
+    <Property Name="customer_state" Type="varchar" MaxLength="50" />
+    <Property Name="customer_zip_code" Type="int" />
+    <Property Name="customer_country" Type="varchar" MaxLength="20" />
+    <Property Name="payment_method_id" Type="int" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="remark" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlJobBatch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="batch_no" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="completed_date" Type="datetime" />
+    <Property Name="staff_name" Type="varchar" MaxLength="100" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlJobOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="code" Type="varchar" MaxLength="100" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="client_order_ref" Type="varchar" MaxLength="100" />
+    <Property Name="sub_total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="customer_name" Type="varchar" MaxLength="100" />
+    <Property Name="customer_street" Type="varchar(max)" />
+    <Property Name="customer_street2" Type="varchar(max)" />
+    <Property Name="customer_zip_code" Type="int" />
+    <Property Name="customer_city" Type="varchar" MaxLength="100" />
+    <Property Name="customer_state" Type="varchar" MaxLength="100" />
+    <Property Name="customer_country" Type="varchar" MaxLength="100" />
+    <Property Name="odoo_sales_id" Type="int" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="batch_id" Type="int" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlJobOrderItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="sku" Type="varchar" MaxLength="50" />
+    <Property Name="uom" Type="varchar" MaxLength="50" />
+    <Property Name="unit_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="quantity" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="length" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="width" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="height" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="sub_total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="sub_total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="voucher_no" Type="varchar" MaxLength="50" />
+    <Property Name="odoo_sales_no" Type="varchar" MaxLength="50" />
+    <Property Name="external_ref_no" Type="varchar" MaxLength="50" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="remark" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlOrderItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="sku" Type="varchar" MaxLength="50" />
+    <Property Name="unit_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="quantity" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="sub_total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="tax_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="discount_fee" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="total_price" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="voucher_no" Type="varchar" MaxLength="50" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="uom_id" Type="int" />
+    <Property Name="remark" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlPaymentMethod">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlPlatform">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="link" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="SKU2" Type="varchar" MaxLength="50" />
+    <Property Name="buy_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="sell_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="product_category_id" Type="int" />
+    <Property Name="product_sub_category_id" Type="int" />
+    <Property Name="uom_id" Type="int" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProductAttributeValue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="attribute_value_id" Type="int" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProductCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TNtlProductComponent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="master_product_id" Type="int" />
+    <Property Name="sub_product_id" Type="int" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProduction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar(max)" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="staff_name" Type="varchar" MaxLength="100" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="total_usage" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="remark" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProductionItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="uom_id" Type="int" />
+    <Property Name="quantity" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="manufactured_date" Type="datetime" />
+    <Property Name="expiry_date" Type="datetime" />
+    <Property Name="production_id" Type="int" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlProductSubCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="product_category_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TNtlShipment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="start_address_line_1" Type="varchar" MaxLength="50" />
+    <Property Name="start_address_line_2" Type="varchar" MaxLength="50" />
+    <Property Name="start_city" Type="varchar" MaxLength="50" />
+    <Property Name="start_state" Type="varchar" MaxLength="50" />
+    <Property Name="start_zip_code" Type="int" />
+    <Property Name="start_country" Type="varchar" MaxLength="20" />
+    <Property Name="dest_address_line_1" Type="varchar" MaxLength="50" />
+    <Property Name="dest_address_line_2" Type="varchar" MaxLength="50" />
+    <Property Name="dest_city" Type="varchar" MaxLength="50" />
+    <Property Name="dest_state" Type="varchar" MaxLength="50" />
+    <Property Name="dest_zip_code" Type="int" />
+    <Property Name="dest_country" Type="varchar" MaxLength="20" />
+    <Property Name="tracking_no" Type="varchar" MaxLength="20" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="expected_date" Type="datetime" />
+    <Property Name="due_date" Type="datetime" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="carrier_id" Type="int" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="remark" Type="varchar" MaxLength="100" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlStockItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="quantity" Type="decimal" Precision="10" Scale="6" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="uom_id" Type="int" />
+    <Property Name="stock_warehouse_id" Type="int" />
+    <Property Name="remarks" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlStockWarehouse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" />
+    <Property Name="email_address" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="20" />
+    <Property Name="address_line_1" Type="varchar" MaxLength="50" />
+    <Property Name="address_line_2" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="zip_code" Type="int" />
+    <Property Name="country" Type="varchar" MaxLength="20" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlSupplierShipment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="received_date" Type="datetime" />
+    <Property Name="supplier_tracking_id" Type="varchar" MaxLength="50" />
+    <Property Name="NTL_tracking_id" Type="varchar" MaxLength="50" />
+    <Property Name="supplier_id" Type="int" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="remarks" Type="varchar(max)" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlUom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="detail_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TNtlUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar(max)" />
+    <Property Name="password" Type="varchar(max)" />
+    <Property Name="email_address" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TNtlUserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="role_id" Type="int" />
+  </EntityType>
+  <Function Name="NSP_TNtlAttribute_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlAttribute_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlAttribute_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlAttributeValue_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlAttributeValue_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="attribute_id" Type="int" Mode="In" />
+    <Parameter Name="value" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlAttributeValue_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="attribute_id" Type="int" Mode="In" />
+    <Parameter Name="value" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCarrier_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCarrier_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCarrier_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomer_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomer_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar" Mode="In" />
+    <Parameter Name="phone_number" Type="varchar" Mode="In" />
+    <Parameter Name="address" Type="varchar(max)" Mode="In" />
+    <Parameter Name="platform_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomer_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar" Mode="In" />
+    <Parameter Name="phone_number" Type="varchar" Mode="In" />
+    <Parameter Name="address" Type="varchar(max)" Mode="In" />
+    <Parameter Name="platform_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomerChat_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomerChat_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="message" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="msg_type" Type="varchar" Mode="In" />
+    <Parameter Name="sender_type" Type="varchar" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="read_status_id" Type="int" Mode="In" />
+    <Parameter Name="send_status_id" Type="int" Mode="In" />
+    <Parameter Name="platform_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlCustomerChat_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="message" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="msg_type" Type="varchar" Mode="In" />
+    <Parameter Name="sender_type" Type="varchar" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="read_status_id" Type="int" Mode="In" />
+    <Parameter Name="send_status_id" Type="int" Mode="In" />
+    <Parameter Name="platform_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlDetail_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlDetail_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="last_updated_by" Type="varchar" Mode="In" />
+    <Parameter Name="last_updated_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlDetail_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_by" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="last_updated_by" Type="varchar" Mode="In" />
+    <Parameter Name="last_updated_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlInvoice_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlInvoice_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="details" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="completed_date" Type="datetime" Mode="In" />
+    <Parameter Name="shipping_fee" Type="decimal" Mode="In" />
+    <Parameter Name="customer_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="customer_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="customer_city" Type="varchar" Mode="In" />
+    <Parameter Name="customer_state" Type="varchar" Mode="In" />
+    <Parameter Name="customer_zip_code" Type="int" Mode="In" />
+    <Parameter Name="customer_country" Type="varchar" Mode="In" />
+    <Parameter Name="payment_method_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlInvoice_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="details" Type="varchar(max)" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="completed_date" Type="datetime" Mode="In" />
+    <Parameter Name="shipping_fee" Type="decimal" Mode="In" />
+    <Parameter Name="customer_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="customer_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="customer_city" Type="varchar" Mode="In" />
+    <Parameter Name="customer_state" Type="varchar" Mode="In" />
+    <Parameter Name="customer_zip_code" Type="int" Mode="In" />
+    <Parameter Name="customer_country" Type="varchar" Mode="In" />
+    <Parameter Name="payment_method_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobBatch_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobBatch_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="batch_no" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="completed_date" Type="datetime" Mode="In" />
+    <Parameter Name="staff_name" Type="varchar" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobBatch_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="batch_no" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="completed_date" Type="datetime" Mode="In" />
+    <Parameter Name="staff_name" Type="varchar" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrder_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrder_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="client_order_ref" Type="varchar" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="customer_name" Type="varchar" Mode="In" />
+    <Parameter Name="customer_street" Type="varchar(max)" Mode="In" />
+    <Parameter Name="customer_street2" Type="varchar(max)" Mode="In" />
+    <Parameter Name="customer_zip_code" Type="int" Mode="In" />
+    <Parameter Name="customer_city" Type="varchar" Mode="In" />
+    <Parameter Name="customer_state" Type="varchar" Mode="In" />
+    <Parameter Name="customer_country" Type="varchar" Mode="In" />
+    <Parameter Name="odoo_sales_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="batch_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrder_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="client_order_ref" Type="varchar" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="customer_name" Type="varchar" Mode="In" />
+    <Parameter Name="customer_street" Type="varchar(max)" Mode="In" />
+    <Parameter Name="customer_street2" Type="varchar(max)" Mode="In" />
+    <Parameter Name="customer_zip_code" Type="int" Mode="In" />
+    <Parameter Name="customer_city" Type="varchar" Mode="In" />
+    <Parameter Name="customer_state" Type="varchar" Mode="In" />
+    <Parameter Name="customer_country" Type="varchar" Mode="In" />
+    <Parameter Name="odoo_sales_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="batch_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrderItem_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrderItem_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="sku" Type="varchar" Mode="In" />
+    <Parameter Name="uom" Type="varchar" Mode="In" />
+    <Parameter Name="unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="length" Type="decimal" Mode="In" />
+    <Parameter Name="width" Type="decimal" Mode="In" />
+    <Parameter Name="height" Type="decimal" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlJobOrderItem_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="sku" Type="varchar" Mode="In" />
+    <Parameter Name="uom" Type="varchar" Mode="In" />
+    <Parameter Name="unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="length" Type="decimal" Mode="In" />
+    <Parameter Name="width" Type="decimal" Mode="In" />
+    <Parameter Name="height" Type="decimal" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrder_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrder_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="voucher_no" Type="varchar" Mode="In" />
+    <Parameter Name="odoo_sales_no" Type="varchar" Mode="In" />
+    <Parameter Name="external_ref_no" Type="varchar" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrder_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="voucher_no" Type="varchar" Mode="In" />
+    <Parameter Name="odoo_sales_no" Type="varchar" Mode="In" />
+    <Parameter Name="external_ref_no" Type="varchar" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="customer_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrderItem_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrderItem_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="sku" Type="varchar" Mode="In" />
+    <Parameter Name="unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="voucher_no" Type="varchar" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlOrderItem_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="sku" Type="varchar" Mode="In" />
+    <Parameter Name="unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="sub_total_price" Type="decimal" Mode="In" />
+    <Parameter Name="tax_price" Type="decimal" Mode="In" />
+    <Parameter Name="discount_fee" Type="decimal" Mode="In" />
+    <Parameter Name="total_price" Type="decimal" Mode="In" />
+    <Parameter Name="voucher_no" Type="varchar" Mode="In" />
+    <Parameter Name="order_id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPaymentMethod_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPaymentMethod_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPaymentMethod_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPlatform_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPlatform_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="link" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlPlatform_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="link" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduct_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduct_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="SKU" Type="varchar" Mode="In" />
+    <Parameter Name="SKU2" Type="varchar" Mode="In" />
+    <Parameter Name="buy_price" Type="decimal" Mode="In" />
+    <Parameter Name="sell_price" Type="decimal" Mode="In" />
+    <Parameter Name="product_category_id" Type="int" Mode="In" />
+    <Parameter Name="product_sub_category_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduct_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="SKU" Type="varchar" Mode="In" />
+    <Parameter Name="SKU2" Type="varchar" Mode="In" />
+    <Parameter Name="buy_price" Type="decimal" Mode="In" />
+    <Parameter Name="sell_price" Type="decimal" Mode="In" />
+    <Parameter Name="product_category_id" Type="int" Mode="In" />
+    <Parameter Name="product_sub_category_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductAttributeValue_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductAttributeValue_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="attribute_value_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductAttributeValue_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="attribute_value_id" Type="int" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductCategory_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductCategory_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductCategory_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductComponent_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductComponent_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="master_product_id" Type="int" Mode="In" />
+    <Parameter Name="sub_product_id" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductComponent_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="master_product_id" Type="int" Mode="In" />
+    <Parameter Name="sub_product_id" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduction_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduction_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="title" Type="varchar(max)" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="staff_name" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="total_usage" Type="decimal" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProduction_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="title" Type="varchar(max)" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="staff_name" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="total_usage" Type="decimal" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductionItem_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductionItem_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="manufactured_date" Type="datetime" Mode="In" />
+    <Parameter Name="expiry_date" Type="datetime" Mode="In" />
+    <Parameter Name="production_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductionItem_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="manufactured_date" Type="datetime" Mode="In" />
+    <Parameter Name="expiry_date" Type="datetime" Mode="In" />
+    <Parameter Name="production_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductSubCategory_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductSubCategory_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="product_category_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlProductSubCategory_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="product_category_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlRole_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlRole_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlRole_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlShipment_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlShipment_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="start_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="start_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="start_city" Type="varchar" Mode="In" />
+    <Parameter Name="start_state" Type="varchar" Mode="In" />
+    <Parameter Name="start_zip_code" Type="int" Mode="In" />
+    <Parameter Name="start_country" Type="varchar" Mode="In" />
+    <Parameter Name="dest_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="dest_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="dest_city" Type="varchar" Mode="In" />
+    <Parameter Name="dest_state" Type="varchar" Mode="In" />
+    <Parameter Name="dest_zip_code" Type="int" Mode="In" />
+    <Parameter Name="dest_country" Type="varchar" Mode="In" />
+    <Parameter Name="tracking_no" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="expected_date" Type="datetime" Mode="In" />
+    <Parameter Name="due_date" Type="datetime" Mode="In" />
+    <Parameter Name="invoice_id" Type="int" Mode="In" />
+    <Parameter Name="carrier_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlShipment_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="start_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="start_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="start_city" Type="varchar" Mode="In" />
+    <Parameter Name="start_state" Type="varchar" Mode="In" />
+    <Parameter Name="start_zip_code" Type="int" Mode="In" />
+    <Parameter Name="start_country" Type="varchar" Mode="In" />
+    <Parameter Name="dest_address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="dest_address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="dest_city" Type="varchar" Mode="In" />
+    <Parameter Name="dest_state" Type="varchar" Mode="In" />
+    <Parameter Name="dest_zip_code" Type="int" Mode="In" />
+    <Parameter Name="dest_country" Type="varchar" Mode="In" />
+    <Parameter Name="tracking_no" Type="varchar" Mode="In" />
+    <Parameter Name="created_date" Type="datetime" Mode="In" />
+    <Parameter Name="expected_date" Type="datetime" Mode="In" />
+    <Parameter Name="due_date" Type="datetime" Mode="In" />
+    <Parameter Name="invoice_id" Type="int" Mode="In" />
+    <Parameter Name="carrier_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="remark" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStatus_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStatus_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStatus_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockItem_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockItem_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="stock_warehouse_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockItem_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="uom_id" Type="int" Mode="In" />
+    <Parameter Name="stock_warehouse_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockWarehouse_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockWarehouse_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar" Mode="In" />
+    <Parameter Name="phone_number" Type="varchar" Mode="In" />
+    <Parameter Name="address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="city" Type="varchar" Mode="In" />
+    <Parameter Name="state" Type="varchar" Mode="In" />
+    <Parameter Name="zip_code" Type="int" Mode="In" />
+    <Parameter Name="country" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlStockWarehouse_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar" Mode="In" />
+    <Parameter Name="phone_number" Type="varchar" Mode="In" />
+    <Parameter Name="address_line_1" Type="varchar" Mode="In" />
+    <Parameter Name="address_line_2" Type="varchar" Mode="In" />
+    <Parameter Name="city" Type="varchar" Mode="In" />
+    <Parameter Name="state" Type="varchar" Mode="In" />
+    <Parameter Name="zip_code" Type="int" Mode="In" />
+    <Parameter Name="country" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlSupplierShipment_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlSupplierShipment_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="received_date" Type="datetime" Mode="In" />
+    <Parameter Name="supplier_tracking_id" Type="varchar" Mode="In" />
+    <Parameter Name="NTL_tracking_id" Type="varchar" Mode="In" />
+    <Parameter Name="supplier_id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlSupplierShipment_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="received_date" Type="datetime" Mode="In" />
+    <Parameter Name="supplier_tracking_id" Type="varchar" Mode="In" />
+    <Parameter Name="NTL_tracking_id" Type="varchar" Mode="In" />
+    <Parameter Name="supplier_id" Type="int" Mode="In" />
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUom_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUom_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUom_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="detail_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUser_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUser_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="varchar(max)" Mode="In" />
+    <Parameter Name="password" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUser_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="username" Type="varchar(max)" Mode="In" />
+    <Parameter Name="password" Type="varchar(max)" Mode="In" />
+    <Parameter Name="email_address" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUserRole_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUserRole_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="role_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TNtlUserRole_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+    <Parameter Name="role_id" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbNtlSystemModelStoreContainer">
+    <EntitySet Name="TNtlAttribute" EntityType="Self.TNtlAttribute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlAttributeValue" EntityType="Self.TNtlAttributeValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlCarrier" EntityType="Self.TNtlCarrier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlCustomer" EntityType="Self.TNtlCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlCustomerChat" EntityType="Self.TNtlCustomerChat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlDetail" EntityType="Self.TNtlDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlInvoice" EntityType="Self.TNtlInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlJobBatch" EntityType="Self.TNtlJobBatch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlJobOrder" EntityType="Self.TNtlJobOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlJobOrderItem" EntityType="Self.TNtlJobOrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlOrder" EntityType="Self.TNtlOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlOrderItem" EntityType="Self.TNtlOrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlPaymentMethod" EntityType="Self.TNtlPaymentMethod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlPlatform" EntityType="Self.TNtlPlatform" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProduct" EntityType="Self.TNtlProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProductAttributeValue" EntityType="Self.TNtlProductAttributeValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProductCategory" EntityType="Self.TNtlProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProductComponent" EntityType="Self.TNtlProductComponent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProduction" EntityType="Self.TNtlProduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProductionItem" EntityType="Self.TNtlProductionItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlProductSubCategory" EntityType="Self.TNtlProductSubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlRole" EntityType="Self.TNtlRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlShipment" EntityType="Self.TNtlShipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlStatus" EntityType="Self.TNtlStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlStockItem" EntityType="Self.TNtlStockItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlStockWarehouse" EntityType="Self.TNtlStockWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlSupplierShipment" EntityType="Self.TNtlSupplierShipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlUom" EntityType="Self.TNtlUom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlUser" EntityType="Self.TNtlUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TNtlUserRole" EntityType="Self.TNtlUserRole" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NTLModelStoreContainer" CdmEntityContainer="dbNtlSystemEntities">
+    <EntitySetMapping Name="TNtlAttributes">
+      <EntityTypeMapping TypeName="NTLModel.TNtlAttribute">
+        <MappingFragment StoreEntitySet="TNtlAttribute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlAttributeValues">
+      <EntityTypeMapping TypeName="NTLModel.TNtlAttributeValue">
+        <MappingFragment StoreEntitySet="TNtlAttributeValue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="attribute_id" ColumnName="attribute_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlCarriers">
+      <EntityTypeMapping TypeName="NTLModel.TNtlCarrier">
+        <MappingFragment StoreEntitySet="TNtlCarrier">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlCustomers">
+      <EntityTypeMapping TypeName="NTLModel.TNtlCustomer">
+        <MappingFragment StoreEntitySet="TNtlCustomer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlDetails">
+      <EntityTypeMapping TypeName="NTLModel.TNtlDetail">
+        <MappingFragment StoreEntitySet="TNtlDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+          <ScalarProperty Name="last_updated_date" ColumnName="last_updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlInvoices">
+      <EntityTypeMapping TypeName="NTLModel.TNtlInvoice">
+        <MappingFragment StoreEntitySet="TNtlInvoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="completed_date" ColumnName="completed_date" />
+          <ScalarProperty Name="shipping_fee" ColumnName="shipping_fee" />
+          <ScalarProperty Name="customer_address_line_1" ColumnName="customer_address_line_1" />
+          <ScalarProperty Name="customer_address_line_2" ColumnName="customer_address_line_2" />
+          <ScalarProperty Name="customer_city" ColumnName="customer_city" />
+          <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+          <ScalarProperty Name="customer_zip_code" ColumnName="customer_zip_code" />
+          <ScalarProperty Name="customer_country" ColumnName="customer_country" />
+          <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlJobBatches">
+      <EntityTypeMapping TypeName="NTLModel.TNtlJobBatch">
+        <MappingFragment StoreEntitySet="TNtlJobBatch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="batch_no" ColumnName="batch_no" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="completed_date" ColumnName="completed_date" />
+          <ScalarProperty Name="staff_name" ColumnName="staff_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlJobOrders">
+      <EntityTypeMapping TypeName="NTLModel.TNtlJobOrder">
+        <MappingFragment StoreEntitySet="TNtlJobOrder">
+          <ScalarProperty Name="odoo_status_id" ColumnName="odoo_status_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="client_order_ref" ColumnName="client_order_ref" />
+          <ScalarProperty Name="sub_total_price" ColumnName="sub_total_price" />
+          <ScalarProperty Name="discount_fee" ColumnName="discount_fee" />
+          <ScalarProperty Name="tax_price" ColumnName="tax_price" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_street" ColumnName="customer_street" />
+          <ScalarProperty Name="customer_street2" ColumnName="customer_street2" />
+          <ScalarProperty Name="customer_zip_code" ColumnName="customer_zip_code" />
+          <ScalarProperty Name="customer_city" ColumnName="customer_city" />
+          <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+          <ScalarProperty Name="customer_country" ColumnName="customer_country" />
+          <ScalarProperty Name="odoo_sales_id" ColumnName="odoo_sales_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="batch_id" ColumnName="batch_id" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlJobOrderItems">
+      <EntityTypeMapping TypeName="NTLModel.TNtlJobOrderItem">
+        <MappingFragment StoreEntitySet="TNtlJobOrderItem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="uom" ColumnName="uom" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="sub_total_price" ColumnName="sub_total_price" />
+          <ScalarProperty Name="discount_fee" ColumnName="discount_fee" />
+          <ScalarProperty Name="tax_price" ColumnName="tax_price" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlPaymentMethods">
+      <EntityTypeMapping TypeName="NTLModel.TNtlPaymentMethod">
+        <MappingFragment StoreEntitySet="TNtlPaymentMethod">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlPermissions">
+      <EntityTypeMapping TypeName="NTLModel.TNtlPermission">
+        <MappingFragment StoreEntitySet="TNtlPermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlPlatforms">
+      <EntityTypeMapping TypeName="NTLModel.TNtlPlatform">
+        <MappingFragment StoreEntitySet="TNtlPlatform">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProducts">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProduct">
+        <MappingFragment StoreEntitySet="TNtlProduct">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="SKU2" ColumnName="SKU2" />
+          <ScalarProperty Name="buy_price" ColumnName="buy_price" />
+          <ScalarProperty Name="sell_price" ColumnName="sell_price" />
+          <ScalarProperty Name="product_category_id" ColumnName="product_category_id" />
+          <ScalarProperty Name="product_sub_category_id" ColumnName="product_sub_category_id" />
+          <ScalarProperty Name="uom_id" ColumnName="uom_id" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductAttributeValues">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProductAttributeValue">
+        <MappingFragment StoreEntitySet="TNtlProductAttributeValue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="attribute_value_id" ColumnName="attribute_value_id" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductCategories">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProductCategory">
+        <MappingFragment StoreEntitySet="TNtlProductCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductComponents">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProductComponent">
+        <MappingFragment StoreEntitySet="TNtlProductComponent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="master_product_id" ColumnName="master_product_id" />
+          <ScalarProperty Name="sub_product_id" ColumnName="sub_product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductions">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProduction">
+        <MappingFragment StoreEntitySet="TNtlProduction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="staff_name" ColumnName="staff_name" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="total_usage" ColumnName="total_usage" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductionItems">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProductionItem">
+        <MappingFragment StoreEntitySet="TNtlProductionItem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="uom_id" ColumnName="uom_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="manufactured_date" ColumnName="manufactured_date" />
+          <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+          <ScalarProperty Name="production_id" ColumnName="production_id" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlProductSubCategories">
+      <EntityTypeMapping TypeName="NTLModel.TNtlProductSubCategory">
+        <MappingFragment StoreEntitySet="TNtlProductSubCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="product_category_id" ColumnName="product_category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlRoles">
+      <EntityTypeMapping TypeName="NTLModel.TNtlRole">
+        <MappingFragment StoreEntitySet="TNtlRole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlRolePermissions">
+      <EntityTypeMapping TypeName="NTLModel.TNtlRolePermission">
+        <MappingFragment StoreEntitySet="TNtlRolePermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="permission_id" ColumnName="permission_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlShipments">
+      <EntityTypeMapping TypeName="NTLModel.TNtlShipment">
+        <MappingFragment StoreEntitySet="TNtlShipment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="start_address_line_1" ColumnName="start_address_line_1" />
+          <ScalarProperty Name="start_address_line_2" ColumnName="start_address_line_2" />
+          <ScalarProperty Name="start_city" ColumnName="start_city" />
+          <ScalarProperty Name="start_state" ColumnName="start_state" />
+          <ScalarProperty Name="start_zip_code" ColumnName="start_zip_code" />
+          <ScalarProperty Name="start_country" ColumnName="start_country" />
+          <ScalarProperty Name="dest_address_line_1" ColumnName="dest_address_line_1" />
+          <ScalarProperty Name="dest_address_line_2" ColumnName="dest_address_line_2" />
+          <ScalarProperty Name="dest_city" ColumnName="dest_city" />
+          <ScalarProperty Name="dest_state" ColumnName="dest_state" />
+          <ScalarProperty Name="dest_zip_code" ColumnName="dest_zip_code" />
+          <ScalarProperty Name="dest_country" ColumnName="dest_country" />
+          <ScalarProperty Name="tracking_no" ColumnName="tracking_no" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="expected_date" ColumnName="expected_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="carrier_id" ColumnName="carrier_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlStockItems">
+      <EntityTypeMapping TypeName="NTLModel.TNtlStockItem">
+        <MappingFragment StoreEntitySet="TNtlStockItem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="uom_id" ColumnName="uom_id" />
+          <ScalarProperty Name="stock_warehouse_id" ColumnName="stock_warehouse_id" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlStockWarehouses">
+      <EntityTypeMapping TypeName="NTLModel.TNtlStockWarehouse">
+        <MappingFragment StoreEntitySet="TNtlStockWarehouse">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="address_line_1" ColumnName="address_line_1" />
+          <ScalarProperty Name="address_line_2" ColumnName="address_line_2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlSupplierShipments">
+      <EntityTypeMapping TypeName="NTLModel.TNtlSupplierShipment">
+        <MappingFragment StoreEntitySet="TNtlSupplierShipment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="received_date" ColumnName="received_date" />
+          <ScalarProperty Name="supplier_tracking_id" ColumnName="supplier_tracking_id" />
+          <ScalarProperty Name="NTL_tracking_id" ColumnName="NTL_tracking_id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlUoms">
+      <EntityTypeMapping TypeName="NTLModel.TNtlUom">
+        <MappingFragment StoreEntitySet="TNtlUom">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlUsers">
+      <EntityTypeMapping TypeName="NTLModel.TNtlUser">
+        <MappingFragment StoreEntitySet="TNtlUser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlUserRoles">
+      <EntityTypeMapping TypeName="NTLModel.TNtlUserRole">
+        <MappingFragment StoreEntitySet="TNtlUserRole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttribute_Delete" FunctionName="NTLModel.Store.NSP_TNtlAttribute_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttribute_Insert" FunctionName="NTLModel.Store.NSP_TNtlAttribute_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttribute_Update" FunctionName="NTLModel.Store.NSP_TNtlAttribute_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttributeValue_Delete" FunctionName="NTLModel.Store.NSP_TNtlAttributeValue_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttributeValue_Insert" FunctionName="NTLModel.Store.NSP_TNtlAttributeValue_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlAttributeValue_Update" FunctionName="NTLModel.Store.NSP_TNtlAttributeValue_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCarrier_Delete" FunctionName="NTLModel.Store.NSP_TNtlCarrier_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCarrier_Insert" FunctionName="NTLModel.Store.NSP_TNtlCarrier_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCarrier_Update" FunctionName="NTLModel.Store.NSP_TNtlCarrier_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomer_Delete" FunctionName="NTLModel.Store.NSP_TNtlCustomer_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomer_Insert" FunctionName="NTLModel.Store.NSP_TNtlCustomer_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomer_Update" FunctionName="NTLModel.Store.NSP_TNtlCustomer_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlDetail_Delete" FunctionName="NTLModel.Store.NSP_TNtlDetail_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlDetail_Insert" FunctionName="NTLModel.Store.NSP_TNtlDetail_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlDetail_Update" FunctionName="NTLModel.Store.NSP_TNtlDetail_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlInvoice_Delete" FunctionName="NTLModel.Store.NSP_TNtlInvoice_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlInvoice_Insert" FunctionName="NTLModel.Store.NSP_TNtlInvoice_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlInvoice_Update" FunctionName="NTLModel.Store.NSP_TNtlInvoice_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobBatch_Delete" FunctionName="NTLModel.Store.NSP_TNtlJobBatch_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobBatch_Insert" FunctionName="NTLModel.Store.NSP_TNtlJobBatch_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobBatch_Update" FunctionName="NTLModel.Store.NSP_TNtlJobBatch_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrder_Delete" FunctionName="NTLModel.Store.NSP_TNtlJobOrder_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrder_Insert" FunctionName="NTLModel.Store.NSP_TNtlJobOrder_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrder_Update" FunctionName="NTLModel.Store.NSP_TNtlJobOrder_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrderItem_Delete" FunctionName="NTLModel.Store.NSP_TNtlJobOrderItem_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrderItem_Insert" FunctionName="NTLModel.Store.NSP_TNtlJobOrderItem_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlJobOrderItem_Update" FunctionName="NTLModel.Store.NSP_TNtlJobOrderItem_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPaymentMethod_Delete" FunctionName="NTLModel.Store.NSP_TNtlPaymentMethod_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPaymentMethod_Insert" FunctionName="NTLModel.Store.NSP_TNtlPaymentMethod_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPaymentMethod_Update" FunctionName="NTLModel.Store.NSP_TNtlPaymentMethod_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPermission_Delete" FunctionName="NTLModel.Store.NSP_TNtlPermission_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPermission_Insert" FunctionName="NTLModel.Store.NSP_TNtlPermission_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPermission_Update" FunctionName="NTLModel.Store.NSP_TNtlPermission_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPlatform_Delete" FunctionName="NTLModel.Store.NSP_TNtlPlatform_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPlatform_Insert" FunctionName="NTLModel.Store.NSP_TNtlPlatform_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlPlatform_Update" FunctionName="NTLModel.Store.NSP_TNtlPlatform_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduct_Delete" FunctionName="NTLModel.Store.NSP_TNtlProduct_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduct_Insert" FunctionName="NTLModel.Store.NSP_TNtlProduct_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduct_Update" FunctionName="NTLModel.Store.NSP_TNtlProduct_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductAttributeValue_Delete" FunctionName="NTLModel.Store.NSP_TNtlProductAttributeValue_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductAttributeValue_Insert" FunctionName="NTLModel.Store.NSP_TNtlProductAttributeValue_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductAttributeValue_Update" FunctionName="NTLModel.Store.NSP_TNtlProductAttributeValue_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductCategory_Delete" FunctionName="NTLModel.Store.NSP_TNtlProductCategory_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductCategory_Insert" FunctionName="NTLModel.Store.NSP_TNtlProductCategory_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductCategory_Update" FunctionName="NTLModel.Store.NSP_TNtlProductCategory_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductComponent_Delete" FunctionName="NTLModel.Store.NSP_TNtlProductComponent_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductComponent_Insert" FunctionName="NTLModel.Store.NSP_TNtlProductComponent_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductComponent_Update" FunctionName="NTLModel.Store.NSP_TNtlProductComponent_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduction_Delete" FunctionName="NTLModel.Store.NSP_TNtlProduction_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduction_Insert" FunctionName="NTLModel.Store.NSP_TNtlProduction_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProduction_Update" FunctionName="NTLModel.Store.NSP_TNtlProduction_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductionItem_Delete" FunctionName="NTLModel.Store.NSP_TNtlProductionItem_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductionItem_Insert" FunctionName="NTLModel.Store.NSP_TNtlProductionItem_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductionItem_Update" FunctionName="NTLModel.Store.NSP_TNtlProductionItem_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductSubCategory_Delete" FunctionName="NTLModel.Store.NSP_TNtlProductSubCategory_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductSubCategory_Insert" FunctionName="NTLModel.Store.NSP_TNtlProductSubCategory_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlProductSubCategory_Update" FunctionName="NTLModel.Store.NSP_TNtlProductSubCategory_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRole_Delete" FunctionName="NTLModel.Store.NSP_TNtlRole_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRole_Insert" FunctionName="NTLModel.Store.NSP_TNtlRole_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRole_Update" FunctionName="NTLModel.Store.NSP_TNtlRole_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRolePermission_Delete" FunctionName="NTLModel.Store.NSP_TNtlRolePermission_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRolePermission_Insert" FunctionName="NTLModel.Store.NSP_TNtlRolePermission_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlRolePermission_Update" FunctionName="NTLModel.Store.NSP_TNtlRolePermission_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlShipment_Delete" FunctionName="NTLModel.Store.NSP_TNtlShipment_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlShipment_Insert" FunctionName="NTLModel.Store.NSP_TNtlShipment_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlShipment_Update" FunctionName="NTLModel.Store.NSP_TNtlShipment_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockItem_Delete" FunctionName="NTLModel.Store.NSP_TNtlStockItem_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockItem_Insert" FunctionName="NTLModel.Store.NSP_TNtlStockItem_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockItem_Update" FunctionName="NTLModel.Store.NSP_TNtlStockItem_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockWarehouse_Delete" FunctionName="NTLModel.Store.NSP_TNtlStockWarehouse_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockWarehouse_Insert" FunctionName="NTLModel.Store.NSP_TNtlStockWarehouse_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSupplierShipment_Delete" FunctionName="NTLModel.Store.NSP_TNtlSupplierShipment_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSupplierShipment_Insert" FunctionName="NTLModel.Store.NSP_TNtlSupplierShipment_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSupplierShipment_Update" FunctionName="NTLModel.Store.NSP_TNtlSupplierShipment_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUom_Delete" FunctionName="NTLModel.Store.NSP_TNtlUom_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUom_Insert" FunctionName="NTLModel.Store.NSP_TNtlUom_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUom_Update" FunctionName="NTLModel.Store.NSP_TNtlUom_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUser_Delete" FunctionName="NTLModel.Store.NSP_TNtlUser_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUser_Insert" FunctionName="NTLModel.Store.NSP_TNtlUser_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUser_Update" FunctionName="NTLModel.Store.NSP_TNtlUser_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUserRole_Delete" FunctionName="NTLModel.Store.NSP_TNtlUserRole_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUserRole_Insert" FunctionName="NTLModel.Store.NSP_TNtlUserRole_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUserRole_Update" FunctionName="NTLModel.Store.NSP_TNtlUserRole_Update" />
+    <EntitySetMapping Name="TNtlStatus">
+      <EntityTypeMapping TypeName="NTLModel.TNtlStatu">
+        <MappingFragment StoreEntitySet="TNtlStatus">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStatus_Delete" FunctionName="NTLModel.Store.NSP_TNtlStatus_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStatus_Insert" FunctionName="NTLModel.Store.NSP_TNtlStatus_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStatus_Update" FunctionName="NTLModel.Store.NSP_TNtlStatus_Update" />
+    <EntitySetMapping Name="TNtlCustomerChats">
+      <EntityTypeMapping TypeName="NTLModel.TNtlCustomerChat">
+        <MappingFragment StoreEntitySet="TNtlCustomerChat">
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="sender_type" ColumnName="sender_type" />
+          <ScalarProperty Name="msg_type" ColumnName="msg_type" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomerChat_Delete" FunctionName="NTLModel.Store.NSP_TNtlCustomerChat_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomerChat_Insert" FunctionName="NTLModel.Store.NSP_TNtlCustomerChat_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlCustomerChat_Update" FunctionName="NTLModel.Store.NSP_TNtlCustomerChat_Update" />
+    <EntitySetMapping Name="TNtlOrders">
+      <EntityTypeMapping TypeName="NTLModel.TNtlOrder">
+        <MappingFragment StoreEntitySet="TNtlOrder">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="last_updated_date" ColumnName="last_updated_date" />
+          <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="odoo_status_id" ColumnName="odoo_status_id" />
+          <ScalarProperty Name="external_ref_no" ColumnName="external_ref_no" />
+          <ScalarProperty Name="odoo_sales_no" ColumnName="odoo_sales_no" />
+          <ScalarProperty Name="odoo_sales_id" ColumnName="odoo_sales_id" />
+          <ScalarProperty Name="voucher_no" ColumnName="voucher_no" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="discount_fee" ColumnName="discount_fee" />
+          <ScalarProperty Name="tax_price" ColumnName="tax_price" />
+          <ScalarProperty Name="sub_total_price" ColumnName="sub_total_price" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrder_Delete" FunctionName="NTLModel.Store.NSP_TNtlOrder_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrder_Insert" FunctionName="NTLModel.Store.NSP_TNtlOrder_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrder_Update" FunctionName="NTLModel.Store.NSP_TNtlOrder_Update" />
+    <EntitySetMapping Name="TNtlOrderItems">
+      <EntityTypeMapping TypeName="NTLModel.TNtlOrderItem">
+        <MappingFragment StoreEntitySet="TNtlOrderItem">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="uom_id" ColumnName="uom_id" />
+          <ScalarProperty Name="total_usage" ColumnName="total_usage" />
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="voucher_no" ColumnName="voucher_no" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="discount_fee" ColumnName="discount_fee" />
+          <ScalarProperty Name="tax_price" ColumnName="tax_price" />
+          <ScalarProperty Name="sub_total_price" ColumnName="sub_total_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlUnits">
+      <EntityTypeMapping TypeName="NTLModel.TNtlUnit">
+        <MappingFragment StoreEntitySet="TNtlUnit">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="total_usage" ColumnName="total_usage" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="master_unit_id" ColumnName="master_unit_id" />
+          <ScalarProperty Name="unit_type_id" ColumnName="unit_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlUnitTypes">
+      <EntityTypeMapping TypeName="NTLModel.TNtlUnitType">
+        <MappingFragment StoreEntitySet="TNtlUnitType">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlWindows">
+      <EntityTypeMapping TypeName="NTLModel.TNtlWindow">
+        <MappingFragment StoreEntitySet="TNtlWindow">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="total_usage" ColumnName="total_usage" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNtlWindowUnits">
+      <EntityTypeMapping TypeName="NTLModel.TNtlWindowUnit">
+        <MappingFragment StoreEntitySet="TNtlWindowUnit">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="total_usage" ColumnName="total_usage" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+          <ScalarProperty Name="window_id" ColumnName="window_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrderItem_Delete" FunctionName="NTLModel.Store.NSP_TNtlOrderItem_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrderItem_Insert" FunctionName="NTLModel.Store.NSP_TNtlOrderItem_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlOrderItem_Update" FunctionName="NTLModel.Store.NSP_TNtlOrderItem_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnit_Delete" FunctionName="NTLModel.Store.NSP_TNtlUnit_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnit_Insert" FunctionName="NTLModel.Store.NSP_TNtlUnit_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnit_Update" FunctionName="NTLModel.Store.NSP_TNtlUnit_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnitType_Delete" FunctionName="NTLModel.Store.NSP_TNtlUnitType_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnitType_Insert" FunctionName="NTLModel.Store.NSP_TNtlUnitType_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlUnitType_Update" FunctionName="NTLModel.Store.NSP_TNtlUnitType_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindow_Delete" FunctionName="NTLModel.Store.NSP_TNtlWindow_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindow_Insert" FunctionName="NTLModel.Store.NSP_TNtlWindow_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindow_Update" FunctionName="NTLModel.Store.NSP_TNtlWindow_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindowUnit_Delete" FunctionName="NTLModel.Store.NSP_TNtlWindowUnit_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindowUnit_Insert" FunctionName="NTLModel.Store.NSP_TNtlWindowUnit_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlWindowUnit_Update" FunctionName="NTLModel.Store.NSP_TNtlWindowUnit_Update" />
+    <EntitySetMapping Name="TNtlSummaryItems">
+      <EntityTypeMapping TypeName="NTLModel.TNtlSummaryItem">
+        <MappingFragment StoreEntitySet="TNtlSummaryItem">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="completed_date" ColumnName="completed_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="used" ColumnName="used" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSummaryItem_Delete" FunctionName="NTLModel.Store.NSP_TNtlSummaryItem_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSummaryItem_Insert" FunctionName="NTLModel.Store.NSP_TNtlSummaryItem_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSummaryItem_Update" FunctionName="NTLModel.Store.NSP_TNtlSummaryItem_Update" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlStockWarehouse_Update" FunctionName="NTLModel.Store.NSP_TNtlStockWarehouse_Update" />
+    <EntitySetMapping Name="TNtlSeleniumLogs">
+      <EntityTypeMapping TypeName="NTLModel.TNtlSeleniumLog">
+        <MappingFragment StoreEntitySet="TNtlSeleniumLog">
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="log_name" ColumnName="log_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSeleniumLog_Delete" FunctionName="NTLModel.Store.NSP_TNtlSeleniumLog_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSeleniumLog_Insert" FunctionName="NTLModel.Store.NSP_TNtlSeleniumLog_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TNtlSeleniumLog_Update" FunctionName="NTLModel.Store.NSP_TNtlSeleniumLog_Update" />
+  </EntityContainerMapping>
+</Mapping>

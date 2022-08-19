@@ -1,0 +1,54 @@
+2022-08-19 14:02:03.583 +08:00 [INF] Now Starting Shopee Order Automation Program
+2022-08-19 14:02:06.618 +08:00 [INF] Now locating Skip Button in Order Page
+2022-08-19 14:02:09.927 +08:00 [INF] Successfully Clicked Skip Button
+2022-08-19 14:02:09.936 +08:00 [INF] Creating Order Dictionary
+2022-08-19 14:02:09.940 +08:00 [INF] Capturing Order ID and Their Respective Links
+2022-08-19 14:02:09.942 +08:00 [INF] Storing In Order Dicitonary with Order ID as Key and Link as Value
+2022-08-19 14:02:10.082 +08:00 [INF] Getting Latest NTL Order ID From Database
+2022-08-19 14:02:10.083 +08:00 [INF] Matching Latest NTL Order ID 21100661X6BWB4 With Latest Shopee Order ID 210927BYNJRYCV
+2022-08-19 14:02:10.150 +08:00 [INF] Navigating To Order 2207128K9K6832, Link: https://seller.shopee.com.my/portal/sale/order/111295601119330
+2022-08-19 14:02:10.416 +08:00 [INF] Successfully Enter Order 2207128K9K6832, Link: https://seller.shopee.com.my/portal/sale/order/111295601119330
+2022-08-19 14:02:12.564 +08:00 [INF] Successfully created Order 2207128K9K6832 in NTL Database
+2022-08-19 14:02:12.570 +08:00 [INF] Order: 2207128K9K6832 - Created Date: 12/7/2022 11:26:00 AM - Customer: Matthew Ting - Total Price: 0
+2022-08-19 14:02:12.638 +08:00 [INF] Order Items: 
+2022-08-19 14:02:12.869 +08:00 [INF] Product 【Pre-Cut Sizes +5 Years Warranty】MALAYSIA UV Tinted Building & Car Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSB150030 - Quantity 1 - Unit Price 5.40 - Sub Total Price 5.40
+2022-08-19 14:02:13.085 +08:00 [INF] Product 【Pre-Cut Sizes +5 Years Warranty】MALAYSIA UV Tinted Building & Car Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSL050110 - Quantity 1 - Unit Price 6.60 - Sub Total Price 6.60
+2022-08-19 14:02:13.087 +08:00 [INF] Successfully Added All Order Items with Order ID 2207128K9K6832 into NTL Database
+2022-08-19 14:02:13.484 +08:00 [INF] Successfully updated Order Price
+2022-08-19 14:02:13.486 +08:00 [INF] Now Sending Order to Odoo using POST API
+2022-08-19 14:02:16.201 +08:00 [INF] Successfully send order data to Odoo! Result: {"customer":"Shopee","product":[{"sku":"FGSTSB150","qty":1,"width":150,"height":30},{"sku":"FGSTSL050","qty":1,"width":50,"height":110}]}
+2022-08-19 14:02:21.205 +08:00 [INF] Navigating To Order 2207128KBJ4UCT, Link: https://seller.shopee.com.my/portal/sale/order/111295667133850
+2022-08-19 14:02:21.501 +08:00 [INF] Successfully Enter Order 2207128KBJ4UCT, Link: https://seller.shopee.com.my/portal/sale/order/111295667133850
+2022-08-19 14:02:24.069 +08:00 [INF] Successfully created Order 2207128KBJ4UCT in NTL Database
+2022-08-19 14:02:24.078 +08:00 [INF] Order: 2207128KBJ4UCT - Created Date: 12/7/2022 11:27:00 AM - Customer: Matthew Ting - Total Price: 0
+2022-08-19 14:02:24.176 +08:00 [INF] Order Items: 
+2022-08-19 14:02:24.564 +08:00 [INF] Product 【Custom sizes +5 Years Warranty】MALAYSIA UV Tinted Building Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSB060 - Quantity 1 - Unit Price 7.20 - Sub Total Price 7.20
+2022-08-19 14:02:24.794 +08:00 [INF] Product 【Custom sizes +5 Years Warranty】MALAYSIA UV Tinted Building Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSL050 - Quantity 1 - Unit Price 6.00 - Sub Total Price 6.00
+2022-08-19 14:02:24.796 +08:00 [INF] Successfully Added All Order Items with Order ID 2207128KBJ4UCT into NTL Database
+2022-08-19 14:02:25.040 +08:00 [INF] Successfully updated Order Price
+2022-08-19 14:02:25.048 +08:00 [INF] Now Sending Order to Odoo using POST API
+2022-08-19 14:02:25.465 +08:00 [INF] Successfully send order data to Odoo! Result: {"customer":"Shopee","product":[{"sku":"FGSTSB060","qty":1,"width":60,"height":100},{"sku":"FGSTSL050","qty":1,"width":50,"height":100}]}
+2022-08-19 14:02:30.474 +08:00 [INF] Navigating To Order 2207224BNGK0NV, Link: https://seller.shopee.com.my/portal/sale/order/112149972157116
+2022-08-19 14:02:30.720 +08:00 [INF] Successfully Enter Order 2207224BNGK0NV, Link: https://seller.shopee.com.my/portal/sale/order/112149972157116
+2022-08-19 14:02:32.652 +08:00 [INF] Successfully created Order 2207224BNGK0NV in NTL Database
+2022-08-19 14:02:32.654 +08:00 [INF] Order: 2207224BNGK0NV - Created Date: 22/7/2022 8:46:00 AM - Customer: Matthew Ting - Total Price: 0
+2022-08-19 14:02:32.689 +08:00 [INF] Order Items: 
+2022-08-19 14:02:32.906 +08:00 [INF] Product 【Custom sizes +5 Years Warranty】MALAYSIA UV Tinted Building Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSB060 - Quantity 1 - Unit Price 7.20 - Sub Total Price 7.20
+2022-08-19 14:02:33.104 +08:00 [INF] Product 【Custom sizes +5 Years Warranty】MALAYSIA UV Tinted Building Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSL050 - Quantity 1 - Unit Price 6.00 - Sub Total Price 6.00
+2022-08-19 14:02:33.105 +08:00 [INF] Successfully Added All Order Items with Order ID 2207224BNGK0NV into NTL Database
+2022-08-19 14:02:33.481 +08:00 [INF] Successfully updated Order Price
+2022-08-19 14:02:33.483 +08:00 [INF] Now Sending Order to Odoo using POST API
+2022-08-19 14:02:34.075 +08:00 [INF] Successfully send order data to Odoo! Result: {"customer":"Shopee","product":[{"sku":"FGSTSB060","qty":1,"width":60,"height":100},{"sku":"FGSTSL050","qty":1,"width":50,"height":100}]}
+2022-08-19 14:02:39.084 +08:00 [INF] Navigating To Order 2207224BPPQ6QJ, Link: https://seller.shopee.com.my/portal/sale/order/112150012140274
+2022-08-19 14:02:39.415 +08:00 [INF] Successfully Enter Order 2207224BPPQ6QJ, Link: https://seller.shopee.com.my/portal/sale/order/112150012140274
+2022-08-19 14:02:41.229 +08:00 [INF] Successfully created Order 2207224BPPQ6QJ in NTL Database
+2022-08-19 14:02:41.231 +08:00 [INF] Order: 2207224BPPQ6QJ - Created Date: 22/7/2022 8:46:00 AM - Customer: Matthew Ting - Total Price: 0
+2022-08-19 14:02:41.290 +08:00 [INF] Order Items: 
+2022-08-19 14:02:41.558 +08:00 [INF] Product 【Pre-Cut Sizes +5 Years Warranty】MALAYSIA UV Tinted Building & Car Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSB150030 - Quantity 1 - Unit Price 5.40 - Sub Total Price 5.40
+2022-08-19 14:02:41.740 +08:00 [INF] Product 【Pre-Cut Sizes +5 Years Warranty】MALAYSIA UV Tinted Building & Car Window Film High Quality Glass Tinted ⚡READYSTOCK⚡ - SKU FGSTSL050110 - Quantity 1 - Unit Price 6.60 - Sub Total Price 6.60
+2022-08-19 14:02:41.742 +08:00 [INF] Successfully Added All Order Items with Order ID 2207224BPPQ6QJ into NTL Database
+2022-08-19 14:02:41.961 +08:00 [INF] Successfully updated Order Price
+2022-08-19 14:02:41.963 +08:00 [INF] Now Sending Order to Odoo using POST API
+2022-08-19 14:02:42.348 +08:00 [INF] Successfully send order data to Odoo! Result: {"customer":"Shopee","product":[{"sku":"FGSTSB150","qty":1,"width":150,"height":30},{"sku":"FGSTSL050","qty":1,"width":50,"height":110}]}
+2022-08-19 14:03:31.959 +08:00 [INF] Actual: 49, Check: 49
+2022-08-19 14:03:31.968 +08:00 [INF] Ended Shopee Order Automation Program
