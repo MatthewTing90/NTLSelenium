@@ -57,17 +57,17 @@ namespace SeleniumTest.Automation.Shopee
 
             int numOfActual = ShopeeOrders();
 
-            // Go Back To Shopee Orders
-            driver.Navigate().GoToUrl("https://seller.shopee.com.my/portal/sale/order");
+            //// Go Back To Shopee Orders
+            //driver.Navigate().GoToUrl("https://seller.shopee.com.my/portal/sale/order");
 
-            int numOfCheck = CheckShopeeOrders();
+            //int numOfCheck = CheckShopeeOrders();
 
-            Log.Information($"Actual: {numOfActual}, Check: {numOfCheck}");
+            //Log.Information($"Actual: {numOfActual}, Check: {numOfCheck}");
 
-            if(numOfActual == numOfCheck)
-            {
-                ntlLog.status = "Online";
-            }
+            //if(numOfActual == numOfCheck)
+            //{
+            //    ntlLog.status = "Online";
+            //}
 
             Log.Information("Ended Shopee Order Automation Program");
 
@@ -78,6 +78,7 @@ namespace SeleniumTest.Automation.Shopee
         public int ShopeeOrders()
         {
             int numOfLines = 0;
+            string rgx = "";
             // Maximizes the Browser Window
             // driver.Manage().Window.FullScreen();
 
@@ -107,7 +108,32 @@ namespace SeleniumTest.Automation.Shopee
             // Get Order IDs and Order Links [Note: Id And Link are different Value]
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-            List<IWebElement> orderIdElemArr = driver.FindElements(By.CssSelector(".orderid")).ToList();
+            Log.Information("Finding 'To Ship' Navigation Tab"); numOfLines += 1;
+
+            // Select "To Ship"
+            IWebElement shipmentTabBtn = driver.FindElement(By.CssSelector("div[class='shopee-tabs__nav-tab']:nth-child(3)"));
+
+            IWebElement shipmentTabLabelElem = shipmentTabBtn.FindElement(By.CssSelector(".tab-label"));
+
+            // Format Text To Remove Inner Whitespace
+            string shipmentTabLabel = shipmentTabLabelElem.Text;
+            rgx = @"(To Ship)\s*(\d+)";
+
+            string numOfShipment = Regex.Replace(shipmentTabLabel, rgx, "$2");
+
+            if(numOfShipment.Equals(""))
+            {
+                return numOfLines;
+            }
+
+            // Click the Shipment Tab
+            action.MoveToElement(shipmentTabBtn).Click().Perform();
+            Log.Information("Selecting 'To Ship' Navigation Tab");
+
+            // Wait for 3 Seconds
+            Task.Delay(1000).Wait();
+
+            List<IWebElement> orderIdElemArr = driver.FindElements(By.CssSelector(".order-sn span")).ToList();
             List<IWebElement> orderLinkElemArr = driver.FindElements(By.CssSelector("a[href*='portal/sale/order/']")).ToList();
 
             // Get List of Order Ids
@@ -198,7 +224,6 @@ namespace SeleniumTest.Automation.Shopee
                 DbStoredProcedure.CustomerInsert(customer, "Selenium");
 
                 customer.id = DbStoredProcedure.GetID("TNtlCustomer");
-
             }
 
             int inc_sta_id = DbStoredProcedure.GetStatusID("draft", "Order");
@@ -226,77 +251,94 @@ namespace SeleniumTest.Automation.Shopee
             order.last_updated_date = createdDt;
 
             DbStoredProcedure.OrderInsert(order, username);
+
+            // Latest Order Id
+            int order_id = DbStoredProcedure.GetID("TNtlOrder");
+
             Log.Information($"Successfully created Order {order.name} in NTL Database"); numOfLines += 1;
 
             // To Remove
             Log.Information($"Order: {order.name} - Created Date: {order.created_date} - Customer: {custName} - Total Price: {order.total_price}"); numOfLines += 1;
 
-            // Latest Order Id
-            int order_id = DbStoredProcedure.GetID("TNtlOrder");
-
             // Collect Order Detail
-            // [Return List of Products]
-            List<IWebElement> productNameElemArr = driver.FindElements(By.CssSelector(".product-item .product-detail .product-name")).ToList();
-            List<IWebElement> unitPriceElemArr = driver.FindElements(By.CssSelector(".product-item~.price")).ToList();
-            List<IWebElement> quantityElemArr = driver.FindElements(By.CssSelector(".product-item~.qty")).ToList();
-            List<IWebElement> skuElemArr = driver.FindElements(By.CssSelector(".product-meta div:nth-child(2)")).ToList();
+            // Get By Row Rather than Individual Elements
 
-            int num_of_products = driver.FindElements(By.CssSelector(".product-item")).Count;
+            // Get List of Products
+            List<IWebElement> productElemArr = driver.FindElements(By.CssSelector(".product-item")).ToList();
+
+            productElemArr = productElemArr.GetRange(1, productElemArr.Count - 1); // Remove 1st Product item
 
             Log.Information("Order Items: "); numOfLines += 1;
 
-            for (int i = 0; i < num_of_products; i++)
+            for(int i = 2; i < productElemArr.Count + 2; i++)
             {
-                TNtlOrderItem orderItem = new TNtlOrderItem();
+                string cssClass = $".product-list > div:nth-child({i})";
 
-                string productSku = skuElemArr.ElementAt(i).Text.Split(' ')[2];
+                // Name
+                IWebElement nameElem = driver.FindElement(By.CssSelector($"{cssClass} .product-name"));
+                string productName = nameElem.Text;
 
-                string productName = productNameElemArr.ElementAt(i).Text.Trim();
-                decimal unitPrice = Convert.ToDecimal(unitPriceElemArr.ElementAt(i).Text.Trim());
-                decimal quantity = Convert.ToDecimal(quantityElemArr.ElementAt(i).Text.Trim());
+                // Unit Price
+                IWebElement priceElem = driver.FindElement(By.CssSelector($"{cssClass} .price"));
+                decimal unitPrice = Convert.ToDecimal(priceElem.Text.Trim());
 
-                var product = db.TNtlProducts.FirstOrDefault(it => it.SKU.Equals(productSku));
+                // Quantity
+                IWebElement qtyElem = driver.FindElement(By.CssSelector($"{cssClass} .qty"));
+                decimal qty = Convert.ToDecimal(qtyElem.Text.Trim());
+
+                // SKU
+                IWebElement skuElem = driver.FindElement(By.CssSelector($"{cssClass} .product-meta"));
+                string sku = skuElem.Text.Trim();
+
+                rgx = @"(.|\n)*?SKU:\s+(.*)";
+                sku = Regex.Replace(sku, rgx, "$2");
+
+                var product = db.TNtlProducts.FirstOrDefault(it => it.SKU.Equals(sku));
 
                 if (product == null)
                 {
                     product = db.TNtlProducts.FirstOrDefault(it => it.SKU.Equals("default"));
                 }
 
+                TNtlOrderItem orderItem = new TNtlOrderItem();
+
                 orderItem.order_id = order_id;
                 orderItem.product_id = product.id;
 
                 orderItem.name = productName;
-                orderItem.sku = productSku;
 
                 // From ProductSKU, get Width and Height
                 rgx = @"[A-Za-z]+(\d{3})(\d{3})?";
 
-                _width = Regex.Replace(productSku, rgx, "$1");
-                _height = Regex.Replace(productSku, rgx, "$2");
+                _width = Regex.Replace(sku, rgx, "$1");
+                _height = Regex.Replace(sku, rgx, "$2");
 
                 decimal width = (_width.Equals("")) ? 100 : Convert.ToDecimal(_width);
                 decimal height = (_height.Equals("")) ? 100 : Convert.ToDecimal(_height);
 
                 orderItem.unit_price = unitPrice;
-                orderItem.quantity = quantity;
-                orderItem.sub_total_price = unitPrice * quantity;
+                orderItem.quantity = qty;
+                orderItem.sub_total_price = unitPrice * qty;
                 orderItem.discount_fee = 0;
                 orderItem.tax_price = 0;
                 orderItem.total_price = orderItem.sub_total_price - orderItem.discount_fee - orderItem.tax_price;
                 orderItem.uom_id = product.uom_id;
 
+                sku = (sku.Equals("")) ? "defaultxx" : sku;
+                orderItem.sku = sku;
+
                 // Set Remark
-                orderItem.remark = $"[{productSku}] {width}cm|{height}cm|{quantity}";
+                orderItem.remark = $"[{sku}] {width}cm|{height}cm|{qty}";
 
                 // Set Total Usage
-                orderItem.total_usage = height * width * quantity / 100 / 100;
+                orderItem.total_usage = height * width * qty / 100 / 100;
 
                 DbStoredProcedure.OrderItemInsert(orderItem, username);
 
                 // To Remove
-                Log.Information($"Product {productName} - SKU {productSku} - Quantity {quantity} - Unit Price {unitPrice} - Sub Total Price {orderItem.sub_total_price}"); numOfLines += 1;
-
+                Log.Information($"Product {productName} - SKU {sku} - Quantity {qty} - Unit Price {unitPrice} - Sub Total Price {orderItem.sub_total_price}"); numOfLines += 1;
             }
+
             Log.Information($"Successfully Added All Order Items with Order ID {order_id_str} into NTL Database"); numOfLines += 1;
 
             // Update Order Total Price
@@ -319,15 +361,20 @@ namespace SeleniumTest.Automation.Shopee
             List<mOdooProduct> productList = new List<mOdooProduct>();
             db.TNtlOrderItems.Where(it => it.order_id == order.id).ToList().ForEach(it =>
             {
+
+                string sku = it.sku;
+
+                sku = (sku.Equals("defaultxx")) ? "" : sku;
+
                 rgx = @"[A-Za-z]+(\d{3})(\d{3})?";
 
-                _width = Regex.Replace(it.sku, rgx, "$1");
-                _height = Regex.Replace(it.sku, rgx, "$2");
+                _width = Regex.Replace(sku, rgx, "$1");
+                _height = Regex.Replace(sku, rgx, "$2");
 
                 int iWidth = (_width.Equals("")) ? 100 : Convert.ToInt32(_width);
                 int iHeight = (_height.Equals("")) ? 100 : Convert.ToInt32(_height);
 
-                mOdooProduct _model = new mOdooProduct(it.sku.Substring(0, 9), (int)it.quantity, iWidth, iHeight);
+                mOdooProduct _model = new mOdooProduct(it.sku, (int)it.quantity, iWidth, iHeight);
                 productList.Add(_model);
             });
 
@@ -343,12 +390,14 @@ namespace SeleniumTest.Automation.Shopee
 
             // Wait for 5 Seconds
             Task.Delay(5000).Wait();
+
             return numOfLines;
         }
 
         public int CheckShopeeOrders()
         {
             int numOfLines = 0;
+            string rgx = "";
             // Maximizes the Browser Window
             // driver.Manage().Window.FullScreen();
         
@@ -377,6 +426,28 @@ namespace SeleniumTest.Automation.Shopee
             /// Web Components
             // Get Order IDs and Order Links [Note: Id And Link are different Value]
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+            Log.Information("Finding 'To Ship' Navigation Tab"); numOfLines += 1;
+
+            // Select "To Ship"
+            IWebElement shipmentTabBtn = driver.FindElement(By.CssSelector("div[class='shopee-tabs__nav-tab']:nth-child(3)"));
+
+            IWebElement shipmentTabLabelElem = shipmentTabBtn.FindElement(By.CssSelector(".tab-label"));
+
+            // Format Text To Remove Inner Whitespace
+            string shipmentTabLabel = shipmentTabLabelElem.Text;
+            rgx = @"(To Ship)\s*(\d+)";
+
+            string numOfShipment = Regex.Replace(shipmentTabLabel, rgx, "$2");
+
+            if(numOfShipment.Equals(""))
+            {
+                return numOfLines;
+            }
+
+            // Click the Shipment Tab
+            action.MoveToElement(shipmentTabBtn).Click().Perform();
+            Log.Information("Selecting 'To Ship' Navigation Tab");
         
             List<IWebElement> orderIdElemArr = driver.FindElements(By.CssSelector(".orderid")).ToList();
             List<IWebElement> orderLinkElemArr = driver.FindElements(By.CssSelector("a[href*='portal/sale/order/']")).ToList();

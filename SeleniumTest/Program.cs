@@ -37,19 +37,25 @@ namespace SeleniumTest
             FirefoxOptions options = new FirefoxOptions();
             // options.AddArguments("--headless");
 
-            driver = new FirefoxDriver(options);
+            driver = new FirefoxDriver();
             Console.Clear();
 
             // Navigate To Site
-            driver.Navigate().GoToUrl("https://seller.shopee.com.my/account/signin");
+            //driver.Navigate().GoToUrl("https://seller.shopee.com.my/account/signin");
 
-            automation = new ShopeeLoginAutomation(driver);
-            automation.StartProgram();
+            //automation = new ShopeeLoginAutomation(driver);
+            //automation.StartProgram();
 
             // Collect Orders
-            driver.Navigate().GoToUrl("https://seller.shopee.com.my/portal/sale/order");
+            //driver.Navigate().GoToUrl("http://127.0.0.1:5500/Shopee/order/order.html");
 
-            automation = new ShopeeOrderAutomation(driver);
+            //automation = new ShopeeOrderAutomation(driver);
+            //automation.StartProgram();
+
+            // Shipment Automation
+            driver.Navigate().GoToUrl("http://localhost:5500/Shopee/order/order.html");
+
+            automation = new ShopeeShipmentAutomation(driver);
             automation.StartProgram();
 
             // while (true)

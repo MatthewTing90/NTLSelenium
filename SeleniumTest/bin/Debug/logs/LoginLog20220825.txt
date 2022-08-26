@@ -1,0 +1,56 @@
+2022-08-25 09:49:52.802 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 09:49:56.886 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 09:50:05.937 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 09:50:05.939 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 09:57:34.372 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 09:57:37.669 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 09:57:44.622 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 09:57:44.626 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 10:14:28.769 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 10:14:31.501 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 10:14:38.346 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 10:14:38.348 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 10:17:05.697 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 10:17:08.942 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 10:17:16.093 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 10:17:16.094 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 10:20:15.518 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 10:20:19.354 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 10:20:27.143 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 10:20:27.145 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:33:25.319 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:33:30.153 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:33:37.691 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:33:37.692 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:34:09.278 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:34:12.583 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:34:20.123 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:34:20.125 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:37:07.164 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:37:10.250 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:37:18.840 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:37:18.841 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:38:49.154 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:38:52.133 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:38:59.536 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:38:59.537 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:41:20.329 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:41:22.706 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:41:30.911 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:41:30.912 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:45:26.965 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:45:29.900 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:45:37.270 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:45:37.272 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:46:39.810 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:46:43.083 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:46:50.716 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:46:50.718 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:48:16.859 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:48:19.954 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:48:27.249 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:48:27.251 +08:00 [INF] Ended Shopee Login Automation!
+2022-08-25 17:51:06.143 +08:00 [INF] Now Starting Shopee Login Automation!
+2022-08-25 17:51:10.237 +08:00 [INF] Successfully enter Username: 01110261628 and Password: NTLasia123$!
+2022-08-25 17:51:18.271 +08:00 [INF] Successfully login to seller.shopee.com!
+2022-08-25 17:51:18.272 +08:00 [INF] Ended Shopee Login Automation!
