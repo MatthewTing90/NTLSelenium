@@ -19,8 +19,31 @@ namespace SeleniumTest.Automation.Shopee
 
         dbNtlSystemEntities db = new dbNtlSystemEntities();
 
+        TNtlSeleniumLog ntlLog;
         public override void StartProgram()
         {
+            // Author: Matthew Ting
+            // Date: 2022-08-26
+            // Description: For Chat Downtime Report
+            Log.Logger = new LoggerConfiguration()
+               .WriteTo.Console()
+               .WriteTo.File("logs/OrderLog.txt", rollingInterval: RollingInterval.Day)
+               .CreateLogger();
+
+            ntlLog.log_name = $"ChatLog{DateTime.Today.ToString("yyyyMMdd")}.txt";
+            ntlLog.start_date = DateTime.Today;
+            ntlLog.end_date = DateTime.Today;
+            ntlLog.status = "Offline";
+            ntlLog.type = 2;
+
+            // Get Shopee Platform
+            int platform_id = DbStoredProcedure.GetPlatformID("Shopee");
+            ntlLog.platform_id = platform_id;
+
+            DbStoredProcedure.SeleniumChatDowntimeInsert(ntlLog);
+            ntlLog.id = DbStoredProcedure.GetID("TNtlSeleniumLog");
+
+
             // To Remove
             Log.Information("Now Starting Shopee Chat Automation Program");
 
@@ -45,13 +68,17 @@ namespace SeleniumTest.Automation.Shopee
             Log.Information("Getting List of Chat Message with Notification");
 
             // Get List of Chat Elements with Notification
-            if(driver.FindElements(By.XPath("//div[@class='_2UghmBs3lm']/../../..")).Count > 0)
+            if (driver.FindElements(By.XPath("//div[@class='_2UghmBs3lm']/../../..")).Count > 0)
             {
                 List<IWebElement> userChatDivArr = driver.FindElements(By.XPath("//div[@class='_2UghmBs3lm']/../../..")).ToList();
                 userChatDivArr.ForEach(elem => getChatMsg(elem));
             }
 
             Log.Information("Ended Shopee Chat Automation Program");
+
+
+            ntlLog.end_date = DateTime.Today;
+            DbStoredProcedure.SeleniumChatDowntimeUpdate(ntlLog);
         }
 
         public void getChatMsg(IWebElement elem)

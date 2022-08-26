@@ -3035,5 +3035,78 @@ namespace SeleniumTest
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NSP_TNtlSeleniumLog_Update", idParameter, log_nameParameter, typeParameter, start_dateParameter, end_dateParameter, platform_idParameter, statusParameter, remarksParameter);
         }
+
+        // Author: Matthew Ting
+        // Date: 2022-08-26
+        // Description: For Chat Downtime Report
+        public virtual int NSP_TNtlSeleniumChatDowntime_Insert(string log_name, Nullable<int> type, Nullable<System.DateTime> start_date, Nullable<System.DateTime> end_date, Nullable<int> platform_id, string status, string remarks)
+        {
+            var log_nameParameter = log_name != null ?
+                new ObjectParameter("log_name", log_name) :
+                new ObjectParameter("log_name", typeof(string));
+
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
+
+            var start_dateParameter = start_date.HasValue ?
+                new ObjectParameter("start_date", start_date) :
+                new ObjectParameter("start_date", typeof(System.DateTime));
+
+            var end_dateParameter = end_date.HasValue ?
+                new ObjectParameter("end_date", end_date) :
+                new ObjectParameter("end_date", typeof(System.DateTime));
+
+            var platform_idParameter = platform_id.HasValue ?
+                new ObjectParameter("platform_id", platform_id) :
+                new ObjectParameter("platform_id", typeof(int));
+
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+
+            var remarksParameter = remarks != null ?
+                new ObjectParameter("remarks", remarks) :
+                new ObjectParameter("remarks", typeof(string));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NSP_TNtlSeleniumChatDowntime_Insert_Custom_001", log_nameParameter, typeParameter, start_dateParameter, end_dateParameter, platform_idParameter, statusParameter, remarksParameter);
+        }
+
+        public virtual int NSP_TNtlSeleniumChatDowntime_Update(Nullable<int> id, string log_name, Nullable<int> type, Nullable<System.DateTime> start_date, Nullable<System.DateTime> end_date, Nullable<int> platform_id, string status, string remarks)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+
+            var log_nameParameter = log_name != null ?
+                new ObjectParameter("log_name", log_name) :
+                new ObjectParameter("log_name", typeof(string));
+
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
+
+            var start_dateParameter = start_date.HasValue ?
+                new ObjectParameter("start_date", start_date) :
+                new ObjectParameter("start_date", typeof(System.DateTime));
+
+            var end_dateParameter = end_date.HasValue ?
+                new ObjectParameter("end_date", end_date) :
+                new ObjectParameter("end_date", typeof(System.DateTime));
+
+            var platform_idParameter = platform_id.HasValue ?
+                new ObjectParameter("platform_id", platform_id) :
+                new ObjectParameter("platform_id", typeof(int));
+
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+
+            var remarksParameter = remarks != null ?
+                new ObjectParameter("remarks", remarks) :
+                new ObjectParameter("remarks", typeof(string));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NSP_TNtlSeleniumChatDowntime_Update_Custom_001", idParameter, log_nameParameter, typeParameter, start_dateParameter, end_dateParameter, platform_idParameter, statusParameter, remarksParameter);
+        }
     }
 }

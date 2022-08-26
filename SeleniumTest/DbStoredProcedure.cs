@@ -739,6 +739,22 @@ namespace SeleniumTest
             db.SaveChanges();
         }
 
+        // Author: Matthew Ting
+        // Date: 2022-08-26
+        // Description: For Chat Downtime Report
+
+        public static void SeleniumChatDowntimeInsert(TNtlSeleniumLog item)
+        {
+            db.NSP_TNtlSeleniumChatDowntime_Insert(item.log_name, item.type, item.start_date, item.end_date, item.platform_id, item.status, item.remarks);
+            db.SaveChanges();
+        }
+
+        public static void SeleniumChatDowntimeUpdate(TNtlSeleniumLog item)
+        {
+            db.NSP_TNtlSeleniumChatDowntime_Update(item.id, item.log_name, item.type, item.start_date, item.end_date, item.platform_id, item.status, item.remarks);
+            db.SaveChanges();
+        }
+
     }
 }
 
